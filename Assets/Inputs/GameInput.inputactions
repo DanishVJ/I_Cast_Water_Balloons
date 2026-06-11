@@ -3,11 +3,11 @@
     "name": "GameInput",
     "maps": [
         {
-            "name": "DropBalloon",
+            "name": "Player",
             "id": "a0414444-0f7d-4d87-9af2-3eaef52776a5",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "DropBalloon",
                     "type": "Button",
                     "id": "1d9f4c98-a138-4be2-b506-c3574538b36f",
                     "expectedControlType": "",
@@ -24,7 +24,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "DropBalloon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
