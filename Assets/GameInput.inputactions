@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "DropBalloon",
+            "id": "a0414444-0f7d-4d87-9af2-3eaef52776a5",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1d9f4c98-a138-4be2-b506-c3574538b36f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "58e4aaf7-6ff4-430e-ab6d-d17f75f50be7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
