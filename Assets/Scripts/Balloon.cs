@@ -5,6 +5,7 @@ public class Balloon : MonoBehaviour
     [SerializeField] private float fallSpeed = 5f;
     [SerializeField] private GameObject splashParticlePrefab;
     
+    private bool _hasPopped = false;
     private bool _isReleased = false;
     private PlayerController _playerController;
 
@@ -24,6 +25,12 @@ public class Balloon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!_isReleased) return;
+        
+        if (_hasPopped) return;
+        
+        _hasPopped = true;
+        
         Debug.Log("The balloon splatted!");
        
         if (splashParticlePrefab != null)
