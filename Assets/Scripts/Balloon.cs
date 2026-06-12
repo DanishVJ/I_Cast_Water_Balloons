@@ -3,6 +3,8 @@ using UnityEngine;
 public class Balloon : MonoBehaviour
 {
     [SerializeField] private float fallSpeed = 5f;
+    [SerializeField] private GameObject splashParticlePrefab;
+    
     private bool _isReleased = false;
     private PlayerController _playerController;
 
@@ -21,17 +23,39 @@ public class Balloon : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("The balloon splatted!");
+       
+        if (splashParticlePrefab != null)
         {
-            if (other.CompareTag("Ground"))
+            GameObject splashEffect = Instantiate(splashParticlePrefab, transform.position, Quaternion.identity);
+            
+            Destroy(splashEffect, 1f);
+        }
+        
+        _playerController?.BalloonCollided();
+        
+        if (other.CompareTag("Person"))
+        {
+            NPCMovement npc = other.GetComponent<NPCMovement>();
+            if (npc != null)
             {
-                Debug.Log("The balloon splatted on the ground!");
-                // TODO: Change sprite to exploded form here
+                npc.GetDrenched();
+            }
 
-                _playerController?.BalloonCollided();
-
-                // Destroy this balloon clone immediately
-                Destroy(gameObject);
+            // TODO: Tell score system to add points
+        }
+        
+        else if (other.CompareTag("Wheelchair"))
+        {
+            NPCMovement wheelchair = other.GetComponent<NPCMovement>();
+            if (wheelchair != null)
+            {
+                wheelchair.GetDrenched();
             }
         }
+
+        Destroy(gameObject);
+    }
        
 }
