@@ -4,6 +4,7 @@ public class Balloon : MonoBehaviour
 {
     [SerializeField] private float fallSpeed = 5f;
     [SerializeField] private GameObject splashParticlePrefab;
+    [SerializeField] private AudioClip popSound;
     
     private bool _hasPopped = false;
     private bool _isReleased = false;
@@ -39,6 +40,11 @@ public class Balloon : MonoBehaviour
             
             Destroy(splashEffect, 1f);
         }
+
+        if (popSound != null)
+        {
+            AudioSource.PlayClipAtPoint(popSound, transform.position);
+        }
         
         _playerController?.BalloonCollided();
         
@@ -49,6 +55,8 @@ public class Balloon : MonoBehaviour
             {
                 npc.GetDrenched();
             }
+            
+            GameManager.Instance?.AddScore(1);
 
             // TODO: Tell score system to add points
         }

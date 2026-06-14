@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject balloonPrefab;
     [SerializeField] private Transform[] playerLocations;
     [SerializeField] private Transform balloonSpawnLocation;
+    [SerializeField] private AudioClip teleportSound;
     
     private GameInput _inputActions;
     private int _dropCounter;
@@ -45,6 +46,11 @@ public class PlayerController : MonoBehaviour
         _currentPlayerLocation = playerLocations[newRandomIndex];
         
         transform.position = _currentPlayerLocation.position;
+        
+        if (teleportSound != null)
+        {
+            AudioSource.PlayClipAtPoint(teleportSound, transform.position);
+        }
     }
 
     private void SpawnBalloon()
@@ -68,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         _dropCounter++;
 
-        if (_dropCounter >= 5)
+        if (_dropCounter >= 3)
         {
             PlayerTeleporter();
             _dropCounter = 0;

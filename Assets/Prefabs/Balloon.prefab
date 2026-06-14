@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Balloon
   fallSpeed: 5
   splashParticlePrefab: {fileID: 6788063795435784997, guid: 0620f79ad7cbe1b47b857177b81c2522, type: 3}
+  popSound: {fileID: 8300000, guid: 55a22d7433128324e8416886a765d1d0, type: 3}
 --- !u!58 &1576710149933560424
 CircleCollider2D:
   m_ObjectHideFlags: 0

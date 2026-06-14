@@ -6,6 +6,7 @@ public class NPCMovement : MonoBehaviour
 
     [SerializeField] private float walkSpeed = 2f;
     [SerializeField] private float runSpeed = 5f;
+    [SerializeField] private AudioClip screamSound;
     
     private Transform _targetPosition;
     private float _currentSpeed;
@@ -50,6 +51,11 @@ public class NPCMovement : MonoBehaviour
         _isStalled = true;
         Debug.Log(gameObject.name + " is shocked and stopped moving!");
         
+        if (!_isWheelchair && screamSound != null)
+        {
+            AudioSource.PlayClipAtPoint(screamSound, transform.position);
+        }
+        
         yield return new WaitForSeconds(1f);
         
         _isStalled = false;
@@ -58,7 +64,7 @@ public class NPCMovement : MonoBehaviour
         {
             _currentSpeed = walkSpeed;
             
-            // TODO: Tell GameManager to add to nuisance meter
+            GameManager.Instance?.IncreaseNuisance();
             
             Debug.Log("Hit wheelchair! Adding to nuisance meter.");
         }

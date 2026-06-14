@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
   walkSpeed: 2
   runSpeed: 5
+  screamSound: {fileID: 8300000, guid: 5484111ea3f97ec48a6c0f472def6dc0, type: 3}
 --- !u!61 &-77746366907675225
 BoxCollider2D:
   m_ObjectHideFlags: 0
