@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70844769ac4170446856129520d5a618
+guid: 43b89655bbe649d4584f10434e8db59e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6496647091177976554
-    second: TEMP_Player_0
+      213: -8430137894388489581
+    second: Window_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -50,8 +50,8 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 32
+  spritePivot: {x: 0.5089693, y: 0.4815177}
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TEMP_Player_0
+      name: Window_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 13
+        width: 128
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61d034b24e547d5a0800000000000000
-      internalID: -6496647091177976554
+      spriteID: 3922a65ff32220b80800000000000000
+      internalID: -8430137894388489581
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TEMP_Player_0: -6496647091177976554
+      Window_0: -8430137894388489581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

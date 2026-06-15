@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 357710037}
   - component: {fileID: 357710036}
   - component: {fileID: 357710038}
+  - component: {fileID: 357710039}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -516,7 +517,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 70844769ac4170446856129520d5a618, type: 3}
+  m_Sprite: {fileID: -6571541754274668700, guid: a9117f56c1947ac4d87a112919540c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -535,8 +536,8 @@ Transform:
   m_GameObject: {fileID: 357710035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.041, y: 0.95588, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.4576, y: 0.95588, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 297134159}
@@ -566,6 +567,28 @@ MonoBehaviour:
   - {fileID: 769011984}
   balloonSpawnLocation: {fileID: 297134159}
   teleportSound: {fileID: 8300000, guid: 3984b1f857f023344b11e36b2e3fdbad, type: 3}
+--- !u!95 &357710039
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357710035}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a1bc34cfac104b4695b3d69907412fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &504037838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1515,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9295ad1c05ef3834c935d84171cef833, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1737,7 +1760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9295ad1c05ef3834c935d84171cef833, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1941,7 +1964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9295ad1c05ef3834c935d84171cef833, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2025,8 +2048,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 85420bffd3ad17148b47b2f37e3a6b13, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2044,8 +2067,8 @@ Transform:
   m_GameObject: {fileID: 1978640129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96000004, y: -0.99, z: 0}
-  m_LocalScale: {x: 12.04042, y: 7.9959373, z: 1}
+  m_LocalPosition: {x: 0.96000004, y: -0.93, z: 0}
+  m_LocalScale: {x: 14.366629, y: 10.459485, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
