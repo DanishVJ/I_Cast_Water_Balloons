@@ -108,7 +108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
   walkSpeed: 2
   runSpeed: 5
-  screamSound: {fileID: 8300000, guid: 5484111ea3f97ec48a6c0f472def6dc0, type: 3}
+  personScreamSound: {fileID: 8300000, guid: 5484111ea3f97ec48a6c0f472def6dc0, type: 3}
+  wheelchairScreamSound: {fileID: 8300000, guid: 596109bddfaf71041a9b759425c9731e, type: 3}
+  stunnedSprite: {fileID: 21300000, guid: c15010b669d98ff428a6d503f3c50eea, type: 3}
 --- !u!61 &-77746366907675225
 BoxCollider2D:
   m_ObjectHideFlags: 0

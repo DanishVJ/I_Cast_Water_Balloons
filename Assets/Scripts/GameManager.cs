@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource bgmAudioSource;
     [SerializeField] private AudioSource sirenAudioSource;
+    [SerializeField] private AudioClip beaconAlert;
 
     private int _score = 0;
     private int _nuisanceMeter = 0;
@@ -59,6 +60,12 @@ public class GameManager : MonoBehaviour
 
         _nuisanceMeter++;
         UpdateUI();
+        
+        if (beaconAlert != null)
+        {
+            AudioSource.PlayClipAtPoint(beaconAlert, transform.position);
+        }
+            
 
         if (_nuisanceMeter >= 3)
         {

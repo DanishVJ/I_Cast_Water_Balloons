@@ -6,18 +6,32 @@ public class NPCMovement : MonoBehaviour
 
     [SerializeField] private float walkSpeed = 2f;
     [SerializeField] private float runSpeed = 5f;
-    [SerializeField] private AudioClip screamSound;
+    [SerializeField] private AudioClip personScreamSound;
+    [SerializeField] private AudioClip wheelchairScreamSound;
+    [SerializeField] private Sprite stunnedSprite;
     
     private Transform _targetPosition;
     private float _currentSpeed;
     private bool _isDrenched = false;
     private bool _isStalled = false;
     private bool _isWheelchair = false;
+    
+    private SpriteRenderer _spriteRenderer;
+    private Sprite _originalSprite;
+    private Animator _animator;
 
     void Start()
     {
         _currentSpeed = walkSpeed;
         _isWheelchair = CompareTag("Wheelchair");;
+        
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        
+        if (_spriteRenderer != null)
+        {
+            _originalSprite = _spriteRenderer.sprite;
+        }
     }
     
     void Update()
@@ -36,6 +50,19 @@ public class NPCMovement : MonoBehaviour
     public void SetupNPC(Transform target)
     {
         _targetPosition = target;
+        
+        if (_targetPosition.position.x < transform.position.x)
+        {
+            Vector3 flippedScale = transform.localScale;
+            flippedScale.x = -Mathf.Abs(flippedScale.x);
+            transform.localScale = flippedScale;
+        }
+        else
+        {
+            Vector3 normalScale = transform.localScale;
+            normalScale.x = Mathf.Abs(normalScale.x);
+            transform.localScale = normalScale;
+        }
     }
     
     public void GetDrenched()
@@ -50,15 +77,35 @@ public class NPCMovement : MonoBehaviour
     {
         _isStalled = true;
         Debug.Log(gameObject.name + " is shocked and stopped moving!");
-        
-        if (!_isWheelchair && screamSound != null)
+  
+        if (_animator != null)
         {
-            AudioSource.PlayClipAtPoint(screamSound, transform.position);
+            _animator.enabled = false;
+        }
+
+        if (_spriteRenderer != null && stunnedSprite != null)
+        {
+            _spriteRenderer.sprite = stunnedSprite;
+        }
+        
+        if (!_isWheelchair && personScreamSound != null)
+        {
+            AudioSource.PlayClipAtPoint(personScreamSound, transform.position);
+        }
+        
+        if (_isWheelchair && wheelchairScreamSound != null)
+        {
+            AudioSource.PlayClipAtPoint(wheelchairScreamSound, transform.position);
         }
         
         yield return new WaitForSeconds(1f);
         
         _isStalled = false;
+        
+        if (_animator != null)
+        {
+            _animator.enabled = true;
+        }
         
         if (_isWheelchair)
         {
